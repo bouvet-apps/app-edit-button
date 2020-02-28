@@ -7,8 +7,6 @@ lets you navigate through your site in preview mode and directly access Content 
 
 Go into the Enonic XP Application admin tool and install the app from the [Enonic Market](https://market.enonic.com/).
 
-The **Edit Button** app will then be available in the widget panel in the content studio.
-
 ## How to use this app
 
 After installing the app, add it to the site(s) you want to apply the edit button to.
