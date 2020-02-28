@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <form>
+    <field-set name="edit-button">
+      <label i18n="edit.label">Edit button</label>
+      <items>
+        <input type="RadioButton" name="position">
+          <label i18n="edit.position">Position</label>
+          <occurrences minimum="1" maximum="1"/>
+          <config>
+            <option i18n="edit.position.top-left" value="top-left">Top left</option>
+            <option i18n="edit.position.top-right" value="top-right">Top right</option>
+            <option i18n="edit.position.bottom-left" value="bottom-left">Bottom left</option>
+            <option i18n="edit.position.bottom-right" value="bottom-right">Bottom right</option>
+          </config>
+          <default>top-left</default>
+        </input>
+        <input type="RadioButton" name="size">
+          <label i18n="edit.button">Button size</label>
+          <occurrences minimum="1" maximum="1"/>
+          <config>
+            <option i18n="edit.button.large" value="large">Large</option>
+            <option i18n="edit.button.small" value="small">Small</option>
+          </config>
+          <default>large</default>
+        </input>
+      </items>
+    </field-set>
+  </form>
+  <processors>
+    <response-processor name="edit-button" order="10"/>
+  </processors>
+</site>

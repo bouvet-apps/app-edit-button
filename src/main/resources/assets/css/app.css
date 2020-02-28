@@ -1,0 +1,119 @@
+.contentStudio-link {
+    display: flex;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background: #000;
+    justify-content: left;
+    align-items: left;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 10px 1px rgba(33,33,33,.5);
+    transition: all 0.2s;
+    padding: 10px 12px 12px 12px;
+    border: 2px solid #fff;
+    z-index: 16000000;
+    opacity: 0.7;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.contentStudio-link.small {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    padding: 5px 6px 5px 6px;
+}
+
+.contentStudio-link:hover {
+    color: white;
+    text-decoration: none;
+    background: #4294DE;
+    opacity: 1;
+    width: 110px;
+}
+.contentStudio-link.no:hover {
+    width: 140px;
+}
+
+.contentStudio-link.small:hover {
+    width: 75px;
+}
+.contentStudio-link.small.no:hover {
+    width: 100px;
+}
+
+.contentStudio-link .contentStudio-link__label {
+    font-size: 18px;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.2s;
+}
+
+.contentStudio-link.small .contentStudio-link__label {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.contentStudio-link:hover .contentStudio-link__label {
+    display: inline-block;
+    opacity: 1;
+}
+
+.contentStudio-link img {
+    height: 25px;
+    width: 22px;
+    margin-right: 10px;
+}
+
+.contentStudio-link.small img {
+    height: 15px;
+    width: 15px;
+}
+
+@media only screen and (min-width: 769px) {
+    .contentStudio-link.top {
+        top: 20px;
+    }
+
+    .contentStudio-link.left {
+        left: 20px;
+    }
+
+    .contentStudio-link.bottom {
+        bottom: 20px;
+    }
+
+    .contentStudio-link.right {
+        right: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contentStudio-link.top {
+        top: 0px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: 0px;
+    }
+    .contentStudio-link.left {
+        left: 0px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-left: 0px;
+    }
+    .contentStudio-link.bottom {
+        bottom: 0px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0px;
+    }
+    .contentStudio-link.right {
+        right: 0px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border-right: 0px;
+    }
+}
+  
