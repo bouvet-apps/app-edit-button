@@ -13,7 +13,6 @@ xp {
   version = xpVersion
 }
 
-
 task npmBuild(type: NpmTask,
         group: 'node',
         dependsOn: 'npmInstall',

@@ -6,7 +6,7 @@
     border-radius: 25px;
     background: #000;
     justify-content: left;
-    align-items: left;
+    align-items: flex-start;
     color: #fff;
     font-weight: bold;
     box-shadow: 0 2px 10px 1px rgba(33,33,33,.5);
@@ -17,6 +17,8 @@
     opacity: 0.7;
     overflow: hidden;
     text-transform: uppercase;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .contentStudio-link.small {
