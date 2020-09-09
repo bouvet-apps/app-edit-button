@@ -30,8 +30,13 @@ In the site config for the application, you can set the following configuration 
 | Version | XP version |
 | ------------- | ------------- |
 | 1.0.0 | >=7.0.0 |
+| 1.1.0 | >=7.3.0 |
 
 ## Changelog
+
+### Version 1.1.0
+
+* Make compatible with Content Studio 3 and projects.
 
 ### Version 1.0.0
 

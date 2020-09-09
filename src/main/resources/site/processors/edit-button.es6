@@ -34,7 +34,9 @@ exports.responseProcessor = (req, res) => {
     if (hasModifyPermission(content)) {
       const siteConfig = libs.portal.getSiteConfig();
       const { position, size } = siteConfig;
-      const contentUrl = `/admin/tool/com.enonic.app.contentstudio/main#/edit/${content._id}`;
+      const { repository } = libs.context.get();
+      const project = repository.split(".").pop();
+      const contentUrl = `/admin/tool/com.enonic.app.contentstudio/main#/${project}/edit/${content._id}`;
 
       const locale = libs.portal.getSite().language || 'en';
       const buttonText = libs.i18n.localize({ key: "edit.button.text", locale })
