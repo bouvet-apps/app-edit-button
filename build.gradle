@@ -1,9 +1,11 @@
 plugins {
-    id 'com.enonic.xp.app' version '2.0.0'
-    id "com.moowork.node" version "1.3.1"
     id 'java'
-    id "maven"
+    id 'com.enonic.xp.app' version '3.4.0'
+    id 'com.github.node-gradle.node' version "7.0.0"
 }
+
+sourceCompatibility = "1.11"
+targetCompatibility = "1.11"
 
 group = 'com.github.bouvet-apps'
 
@@ -27,39 +29,41 @@ rootProject.tasks.getByName("processResources").dependsOn npmBuild
 
 app {
     name = project.ext.appName
-    displayName = 'Edit Button'
-    vendorName = 'Bouvet Norge AS'
-    vendorUrl = 'https://wwww.bouvet.no'
+    displayName = project.ext.displayName
+    vendorName = project.ext.vendorName
+    vendorUrl = project.ext.vendorUrl
     systemVersion = "${xpVersion}"
 }
 
 dependencies {
-    compile "com.enonic.xp:core-api:${xpVersion}"
-    compile "com.enonic.xp:portal-api:${xpVersion}"
+    implementation "com.enonic.xp:core-api:${xpVersion}"
+    implementation "com.enonic.xp:portal-api:${xpVersion}"
+    include "com.enonic.xp:lib-admin:${xpVersion}"
     include "com.enonic.xp:lib-content:${xpVersion}"
     include "com.enonic.xp:lib-portal:${xpVersion}"
     include "com.enonic.xp:lib-auth:${xpVersion}"
     include "com.enonic.xp:lib-context:${xpVersion}"
     include "com.enonic.xp:lib-i18n:${xpVersion}"
-    include "com.enonic.lib:lib-util:2.0.0"
+    include "com.enonic.lib:lib-util:3.1.1"
 }
 
 repositories {
     mavenLocal()
+    mavenCentral()
     jcenter()
     xp.enonicRepo()
     maven {
-        url 'http://repo.enonic.com/public'
+        url 'https://repo.enonic.com/public'
     }
 }
 
 node {
-    version = '10.15.0'
-    npmVersion = '6.9.0'
+    version = '18.17.1'
+    npmVersion = '9.8.0'
     download = true
 }
 
 wrapper {
-    gradleVersion = '5.6.4'
+    gradleVersion = '8.3'
     distributionType = Wrapper.DistributionType.BIN
 }
