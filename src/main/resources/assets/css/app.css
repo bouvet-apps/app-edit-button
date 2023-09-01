@@ -35,14 +35,14 @@
 }
 
 .contentStudio-link.no:hover {
-    width: 140px;
+    width: 160px;
 }
 
 .contentStudio-link.small:hover {
     width: 75px;
 }
 .contentStudio-link.small.no:hover {
-    width: 100px;
+    width: 110px;
 }
 
 .contentStudio-link .contentStudio-link__label {
