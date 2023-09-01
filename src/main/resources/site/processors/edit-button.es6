@@ -26,7 +26,7 @@ function hasModifyPermission(content) {
     }
   }
   return false;
-};
+}
 
 exports.responseProcessor = (req, res) => {
   if (req.mode === "preview") {
@@ -62,4 +62,3 @@ exports.responseProcessor = (req, res) => {
   }
   return res;
 };
-
