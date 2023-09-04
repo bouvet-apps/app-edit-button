@@ -26,7 +26,7 @@ function hasModifyPermission(content) {
     }
   }
   return false;
-};
+}
 
 exports.responseProcessor = (req, res) => {
   if (req.mode === "preview") {
@@ -40,9 +40,10 @@ exports.responseProcessor = (req, res) => {
 
       const locale = libs.portal.getSite().language || 'en';
       const buttonText = libs.i18n.localize({ key: "edit.button.text", locale })
+      const editIconUrl = libs.portal.assetUrl({ path: "images/edit-button.svg" });
 
       const html = `<a href="${contentUrl}" class="contentStudio-link ${position.split("-").join(" ")} ${size} ${locale}" target="_blank">
-        <img class="app-icon contentStudio-link__icon" src="/admin/tool/com.enonic.app.contentstudio/main/_/asset/com.enonic.app.contentstudio/icons/icon-white.svg">
+        <img class="app-icon contentStudio-link__icon" src="${editIconUrl}">
         <span class="contentStudio-link__label">${buttonText}</span>
       </a>
       `;
@@ -61,4 +62,3 @@ exports.responseProcessor = (req, res) => {
   }
   return res;
 };
-
