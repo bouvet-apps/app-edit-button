@@ -31,6 +31,7 @@ In the site config for the application, you can set the following configuration 
 | ------------- | ------------- |
 | 1.0.0 | >=7.0.0 |
 | 1.1.0 | >=7.3.0 |
+| 1.1.1 | >=7.9.2 |
 
 ## Changelog
 
