@@ -1,4 +1,3 @@
-/* eslint-disable */
 const libs = {
   portal: require("/lib/xp/portal"),
   content: require("/lib/xp/content"),
