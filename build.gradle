@@ -1,13 +1,8 @@
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'com.enonic.xp.app' version '3.6.1'
+    id 'com.enonic.xp.app'
     id 'com.github.node-gradle.node' version "7.1.0"
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
 }
 
 group = 'com.github.bouvet-apps'
@@ -42,23 +37,15 @@ task npmBuild(type: NpmTask,
 }
 rootProject.tasks.getByName("processResources").dependsOn npmBuild
 
-app {
-    name = project.ext.appName
-    displayName = project.ext.displayName
-    vendorName = project.ext.vendorName
-    vendorUrl = project.ext.vendorUrl
-    systemVersion = "${xpVersion}"
-}
-
 dependencies {
-    implementation "com.enonic.xp:core-api:${xpVersion}"
-    implementation "com.enonic.xp:portal-api:${xpVersion}"
-    include "com.enonic.xp:lib-admin:${xpVersion}"
-    include "com.enonic.xp:lib-content:${xpVersion}"
-    include "com.enonic.xp:lib-portal:${xpVersion}"
-    include "com.enonic.xp:lib-auth:${xpVersion}"
-    include "com.enonic.xp:lib-context:${xpVersion}"
-    include "com.enonic.xp:lib-i18n:${xpVersion}"
+    implementation xplibs.api.core
+    implementation xplibs.api.portal
+    include xplibs.admin
+    include xplibs.content
+    include xplibs.portal
+    include xplibs.auth
+    include xplibs.context
+    include xplibs.i18n
     include "com.enonic.lib:lib-util:3.1.1"
 }
 
@@ -78,6 +65,6 @@ node {
 }
 
 wrapper {
-    gradleVersion = '8.11.1'
+    gradleVersion = '9.5.0'
     distributionType = Wrapper.DistributionType.BIN
 }
