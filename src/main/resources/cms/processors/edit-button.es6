@@ -30,7 +30,7 @@ function hasModifyPermission(content) {
 exports.responseProcessor = (req, res) => {
   if (req.mode === "preview") {
     const content = libs.portal.getContent();
-    if (hasModifyPermission(content)) {
+    if (content && hasModifyPermission(content)) {
       const siteConfig = libs.portal.getSiteConfig();
       const { position, size } = siteConfig;
       const { repository } = libs.context.get();
