@@ -1,0 +1,4 @@
+kind: "Site"
+processors:
+  - name: "edit-button"
+    order: 10
